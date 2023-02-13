@@ -18,24 +18,24 @@ columns are as follows:
 
 **Feature Name   -	Description**
 
-_age_	-Age of the customer
-_job_ -	Profession of the customer
-_marital_ -	Marital status of the customer
+_age_	-Age of the customer;
+_job_ -	Profession of the customer;
+_marital_ -	Marital status of the customer;
 _education_ -	Educational qualification of the
-customer
-_default_ -	Does the customer have credit in default?
-_balance_ -	Average yearly balance
-_housing_ -	Does the customer have a housing loan?
-_loan_ - Does the customer have a personal loan?
+customer;
+_default_ -	Does the customer have credit in default?;
+_balance_ -	Average yearly balance;
+_housing_ -	Does the customer have a housing loan?;
+_loan_ - Does the customer have a personal loan?;
 _contact_ - Contact communication type of the 
-customer
-_day_ - Last contact day of the month
-_month_ - Last contact month of the year
-_duration_ - Last contact duration in seconds
-_campaign_ - Number of contacts during campaign
-_pdays_ - Number of days since last contact
-_previous_ - Number of contacts before campaign
-_poutcome_ - Outcome of previous campaign
+customer;
+_day_ - Last contact day of the month;
+_month_ - Last contact month of the year;
+_duration_ - Last contact duration in seconds;
+_campaign_ - Number of contacts during campaign;
+_pdays_ - Number of days since last contact;
+_previous_ - Number of contacts before campaign;
+_poutcome_ - Outcome of previous campaign;
 _y_ - Has the customer subscribed for a deposit?
 
 Here the y column which answers if the customer has subscribed for a deposit, is the target column or the dependent variable.
@@ -58,12 +58,14 @@ Since the dataset has an identifiable dependent variable, supervised machine lea
 
 The Logistic Regression algorithm was chosen as it can predict a binary outcome occurring, which suits the case of the dependent variable here. Also, it is simple and very efficient. On the other hand, the Decision Tree algorithm can help identify the strategy that is most likely to reach a goal; like a marketing campaign that can lead to more customer deposits. Similarly, Random Forest algorithm with its multiple decision trees, can be used, with an added advantage of being suitable for large datasets.
 
-**7. Assumptions **
+**7. Assumptions**
 
 The following assumptions were made in order to create the model for the project:
 
 •	Since the age column has a high VIF, it can be removed as a feature for the model.
+
 •	The day and month columns do not have an individual significance and can be removed. Instead, the pdays column with the number of days since last contact, can be considered as a feature.
+
 •	Using all the other features in order would get a higher accuracy with the model.
 
 **8. Model Evaluation and Technique**
@@ -72,33 +74,42 @@ The model evaluation methods used were: confusion matrix, accuracy score, precis
 
 Further, the best hyperparameters for the Random Forest were found using Random Search. But on employing these hyperparameters, the algorithm had zero precision and recall. Hence, the most effective model would be of Random Forest with n_estimators=1000.
 
-**9. Inferences from the Project **
+**9. Inferences from the Project**
 
 The overall inferences from the data are as follows:
 
 •	Most customers belong to the age bracket of 35-40, with the average age being 40.9. The maximum and minimum ages are 18 and 95, respectively.
+
 •	Blue-collar jobs are the most common among the customers with a count of 9732. Very few have unknown jobs.
+
 •	Most of the bank’s customers are married and very few of them have ‘divorced’ as their marital status.
+
 •	Majority of the customers have finished their secondary education.
+
 •	The average contact duration of the past campaign is 258 seconds.
+
 •	The mean number of days since last contact is 40 and the number of contacts before the current campaign has a low average of 0.58.
+
 •	Finally, the outcomes of previous campaigns are mostly unknown.
 
 The best performing Random Forest model has a precision of 72.8% and hence can give relevant results for customers subscribing for a deposit, among the predictions. But a recall score of 31.9% means that not all relevant outcomes (i.e. a customer subscribing for a deposit) can be predicted by the model.
 
-**10. Future Possibilities **
+**10. Future Possibilities**
 
 The future possibilities for this project includes: using day and month columns as relevant features, provided the date of current campaign is known. A model can be optimized for prediction of customers with specific jobs or ones in specific age brackets. This can help in getting accurate predictions and choosing the efficient marketing campaign.
 
-**11. Conclusion **
+**11. Conclusion**
 
 This project has succeeded in identifying the distribution of relevant features which have been visualised. Also, the major objective of finding a high performing model has been achieved, with the Random Forest model having a 90% accuracy and an appreciable f1 score.
 
 **12. References**
 
 _Supervised Machine Learning_: https://www.ibm.com/in-en/topics/supervised-learning
+
 _Supervised classification models_: https://builtin.com/data-science/supervised-machine-learning-classification
+
 _Variance Inflation Factor_: https://online.stat.psu.edu/stat462/node/180/
+
 _Precision and Recall_: https://builtin.com/data-science/precision-and-recall
 
 
